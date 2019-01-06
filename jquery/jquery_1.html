@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="jquery-3.3.1.js"></script>
+
+    <!--
+        Document ready and Window load in head start
+    -->
+    <script type="text/javascript">
+
+    $(window).on('load',function(){
+        //alert("Window loaded");
+        $('#div1').html("Height = " + $('#img1').height() + "<br/>"+"Width = "+$('#img1').width());
+    });
+    
+    //$(document).ready(
+    //    function(){ 
+    //        alert('DOM loaded'); 
+    //});
+
+    </script>
+
+    <!--
+        Document ready and Window load in head End
+    -->
+</head>
+<body>
+    
+    <div id="div1"></div>
+    <img id="img1" src="Attitude-Era.jpg"/>
+    <!--
+        Button Click simple alert start
+    -->
+    <!-- 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#button1').click(function () {
+                alert('jQuery!!');
+            });  
+        })
+    </script>
+    <input type="button" id="button1" value="Click Me"/> 
+    -->
+    <!--
+        Button Click simple alert end
+    -->
+       
+    
+    <!--
+    <script type="text/javascript">
+        $(window).load(function() {
+            alert("Window Loaded");
+        });
+
+        $(document).ready(function() {
+            alert("DOM Loaded");
+        });
+
+    </script>
+    --> 
+    
+    
+</body>
+</html>

@@ -1,0 +1,80 @@
+Angular 6:
+-------------------
+1. Its Javascript framework
+
+Used angular with node.js as server
+
+Installation:
+-------------------
+1. install nodejs .msi latest , double click and install in an director in nodejs directory following command:
+  - npm install g @angular/cli latest     >  installs latest version of angular into local system. npm - node package manager
+2. create a new project of angular following command:
+	- ng new my-angular-project
+3. navigate in my-angular-project directory and executte following command:
+	- ng serve -this starts the server and deploys the app my-angular-project.
+4. In chrome url http://localhost:4200, u will see the index page i.e. app.component.html
+
+Course Struture:
+-------------------
+1. Getting Started
+2. The Basics
+3. Components & Databinding
+4. Directives
+5. Services and Dependency injections
+6. Routing
+7. Observables
+8. Forms
+9. Pipes
+10. Http
+11. Authentication
+12. Optimizations and NgModule
+13. Deployment
+14. Animation and Testing
+
+3. Components & Databinding:
+-------------------------------
+	- Each component have their own template, HTML, css, scripts. It can be simple small feature. Single resposibilty priciple.
+	-@Component is the annotation, can be created by manual or CLI
+	- During development, each feature means a component
+	- Steps to create a new component manually
+		1. Create a feature directory with appropriate feature name e.g server inside src/app
+		
+		2. Create new files, 1 denoting component html and 2 denoting component ts
+		e.g. : server.component.html and server.component.ts
+		
+		3. In server.component.html write some html code which is specific to feature.
+		e.g. <h1>Inside server component html</h1>
+		
+		4. In server.component.ts write some ts code 
+		e.g. 
+			import { Component } from '@angular/core';				---> Imports the component from angular/core, similar to java import
+
+			@Component({											---> Annotation to indicate this is angular component, similar to spring @Configuration
+			selector:'app-server',									---> selector is used by angular framework to pick up component, 
+																		 this is mapped in app.component.ts as <app-server></app-server> 
+			templateUrl:'./server.component.html'					---> url of component html resource
+			})
+			export class ServerComponent {							---> Class name of component 
+			}
+			
+		5. Register the component with angular app module
+			In app.module.ts add a import statement to import new created component
+			E.g. 		
+			import { ServerComponent } from './server/server.component';
+			
+			In @NgModule, in "declarations:" array tag add component name
+			e.g.
+			@NgModule({
+			  declarations: [
+				ServerComponent,
+				AppComponent
+				]
+			})
+			
+		6. Access the url.
+		So the component html of app i.e. app.component.html is works on principle of single page application.
+		It binds the server.component.html response
+		
+	- Steps to create a new component thru CLI
+		ng generate component <component name> 
+		this automatially create the component template files and update the app.module.ts
